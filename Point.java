@@ -57,7 +57,33 @@ class Point {
         System.out.println("Current co-ordinations :" + "("+this.x + "," +this.y+")");
     }
 
-    
+
+
+}
+class Canvas
+{
+    private List<Point> points;
+    public Canvas() {
+        points = new ArrayList<>();
+    }
+
+    public void addPoint(Point p)
+    {
+        this.points.add(p);
+    }
+    public void removePoint(Point p)
+    {
+        this.points.remove(p);
+    }
+    public void movePoint(char x,char y)
+    {
+        Iterator<Point> iterator = points.iterator();
+        while (iterator.hasNext()) {
+            iterator.next().move(x, y);
+        }
+    }
+
+
 
 }
 
